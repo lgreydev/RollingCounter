@@ -11,6 +11,7 @@
 		5E33A5A129408B6E008E7929 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33A5A029408B6E008E7929 /* ContentView.swift */; };
 		5E33A5A329408B70008E7929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E33A5A229408B70008E7929 /* Assets.xcassets */; };
 		5E33A5A629408B70008E7929 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E33A5A529408B70008E7929 /* Preview Assets.xcassets */; };
+		5E33A5AE29408BA6008E7929 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33A5AD29408BA6008E7929 /* RollingText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		5E33A5A029408B6E008E7929 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5E33A5A229408B70008E7929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E33A5A529408B70008E7929 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E33A5AD29408BA6008E7929 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		5E33A59D29408B6E008E7929 /* RollingCounter */ = {
 			isa = PBXGroup;
 			children = (
+				5E33A5AC29408B8C008E7929 /* View */,
 				5E33A59E29408B6E008E7929 /* RollingCounterApp.swift */,
 				5E33A5A029408B6E008E7929 /* ContentView.swift */,
 				5E33A5A229408B70008E7929 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				5E33A5A529408B70008E7929 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5E33A5AC29408B8C008E7929 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E33A5AD29408BA6008E7929 /* RollingText.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				5E33A5A129408B6E008E7929 /* ContentView.swift in Sources */,
 				5E33A59F29408B6E008E7929 /* RollingCounterApp.swift in Sources */,
+				5E33A5AE29408BA6008E7929 /* RollingText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
