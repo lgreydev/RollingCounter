@@ -16,7 +16,7 @@ struct RollingText: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(0..<animationRange.count, id: \.self) {_ in
+            ForEach(0..<animationRange.count, id: \.self) { index in
                 Text("8")
                     .font(font)
                     .fontWeight(weight)
@@ -33,6 +33,7 @@ struct RollingText: View {
                                         .frame(width: size.width, height: size.height, alignment: .center)
                                 }
                             }
+                            .offset(y: -CGFloat(animationRange[index]) * size.height)
                         }
                         .clipped()
                     }
