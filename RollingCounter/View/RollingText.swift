@@ -41,6 +41,43 @@ struct RollingText: View {
         }
         .onAppear {
             animationRange = Array(repeating: 0, count: "\(value)".count)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
+
+            }
+        }
+        .onChange(of: value) { newValue in
+            let extra = "\(value)".count - animationRange.count
+            if extra > 0 {
+                for _ in 0..<extra {
+                    withAnimation(.easeIn(duration: 0.1)) {
+                        animationRange.append(0)
+                    }
+                }
+            } else {
+                for _ in 0..<(-extra) {
+                    withAnimation(.easeIn(duration: 0.1)) {
+                        animationRange.removeLast()
+                    }
+                }
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                updateText()
+            }
+        }
+    }
+
+    func updateText() {
+        let stringValue = "\(value)"
+        for (index, value) in zip(0..<stringValue.count, stringValue) {
+
+            var fraction = Double(index) * 0.15
+            fraction = (fraction > 0.5 ? 0.5 : fraction)
+
+            withAnimation(.interactiveSpring(response: 0.8, dampingFraction: 1 + fraction, blendDuration: 1 + fraction)) {
+                animationRange[index] = (String(value) as NSString).integerValue
+            }
         }
     }
 }
