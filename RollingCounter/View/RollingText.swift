@@ -43,27 +43,28 @@ struct RollingText: View {
             animationRange = Array(repeating: 0, count: "\(value)".count)
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
-                let extra = "\(value)".count - animationRange.count
 
-                if extra > 0 {
-                    for _ in 0..<extra {
-                        withAnimation(.easeIn(duration: 0.1)) {
-                            animationRange.append(0)
-                        }
-                    }
-                } else {
-                    for _ in 0..<(-extra) {
-                        withAnimation(.easeIn(duration: 0.1)) {
-                            animationRange.removeLast()
-                        }
-                    }
-                }
-
-                updateText()
             }
         }
         .onChange(of: value) { newValue in
-            updateText()
+            let extra = "\(value)".count - animationRange.count
+            if extra > 0 {
+                for _ in 0..<extra {
+                    withAnimation(.easeIn(duration: 0.1)) {
+                        animationRange.append(0)
+                    }
+                }
+            } else {
+                for _ in 0..<(-extra) {
+                    withAnimation(.easeIn(duration: 0.1)) {
+                        animationRange.removeLast()
+                    }
+                }
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                updateText()
+            }
         }
     }
 
