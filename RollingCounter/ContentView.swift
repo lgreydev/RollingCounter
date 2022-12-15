@@ -12,8 +12,12 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 25) {
                 RollingText(font: .system(size: 55), weight: .black, value: $value)
+
+                Button("Change Value") {
+                    value = .random(in: 200...300)
+                }
             }
             .padding()
             .navigationTitle("Rolling text")
