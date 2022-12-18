@@ -16,7 +16,7 @@ struct ContentView: View {
                 RollingText(font: .system(size: 55), weight: .black, value: $value)
 
                 Button("Change Value") {
-                    value = .random(in: 200...1300)
+                    value = .random(in: 100...1300)
                 }
             }
             .padding()
